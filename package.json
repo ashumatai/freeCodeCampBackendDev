@@ -7,8 +7,22 @@
 		"cookie-parser": "^1.4.3",
 		"fcc-express-bground": "https://github.com/freeCodeCamp/fcc-express-bground-pkg.git"
 	},
-	"main": "server.js",
-	"scripts": {
-		"start": "node server.js"
-	}
+  "author": "Ashutosh Matai",
+  "description": "A purposeful way to learn NodeJS Backend development",
+  "keywords": [
+    "backend",
+    "learn",
+    "development",
+    "open source",
+    "freecodecamp"
+  ],
+  "license": "MIT",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://idontknow/todo.git"
+  }
 }
