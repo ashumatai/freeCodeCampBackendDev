@@ -1,16 +1,23 @@
 {
-	"name": "fcc-learn-npm-package-json",
-	"author": "Ashutosh Matai",
-	"description": "A purposeful way to learn NodeJS Backend development",
-	"dependencies": {
-		"express": "^4.14.0"
-	},
-	"main": "server.js",
-	"scripts": {
-		"start": "node server.js"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://idontknow/todo.git"
-	}
+  "name": "fcc-learn-npm-package-json",
+  "author": "Ashutosh Matai",
+  "description": "A purposeful way to learn NodeJS Backend development",
+  "keywords": [
+    "backend",
+    "learn",
+    "development",
+    "open source",
+    "freecodecamp"
+  ],
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://idontknow/todo.git"
+  }
 }
