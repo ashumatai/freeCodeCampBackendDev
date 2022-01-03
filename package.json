@@ -1,5 +1,7 @@
 {
 	"name": "fcc-learn-npm-package-json",
+	"author": "Ashutosh Matai",
+	"description": "A purposeful way to learn NodeJS Backend development",
 	"dependencies": {
 		"express": "^4.14.0"
 	},
@@ -10,6 +12,5 @@
 	"repository": {
 		"type": "git",
 		"url": "https://idontknow/todo.git"
-	},
-	"author": "Ashutosh Matai"
+	}
 }
