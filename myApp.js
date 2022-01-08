@@ -28,8 +28,17 @@ var app = express();
 //   return res.json({"time": req.time})
 // });
 
-app.get('/:word/echo',function(req,res) {
-  return res.json({"echo":req.params.word});
+app.get("/:word/echo", function (req, res) {
+  return res.json({ echo: req.params.word });
 });
+
+app
+  .route("/name")
+  .get(function (req, res) {
+    return res.json({ name: req.query.first + " " + req.query.last });
+  })
+  .post(function (req, res) {
+    return res.json({ name: req.query.first + " " + req.query.last });
+  });
 
 module.exports = app;
