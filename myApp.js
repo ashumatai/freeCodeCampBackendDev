@@ -1,12 +1,15 @@
 var express = require("express");
 var app = express();
+var bodyParser = require("body-parser");
+
+app.use(bodyParser.urlencoded({extended: false}));
 
 // console.log("Hello World");
-// app.get("/", function (req, res) {
-//   var absolutePath = __dirname + "/views/index.html";
-//   res.sendFile(absolutePath);
-// });
-// app.use("/public", express.static(__dirname + "/public"));
+app.get("/", function (req, res) {
+  var absolutePath = __dirname + "/views/index.html";
+  res.sendFile(absolutePath);
+});
+app.use("/public", express.static(__dirname + "/public"));
 // app.get('/json', (req, res) => {
 //   if(process.env['MESSAGE_STYLE'] === "uppercase") {
 //   return res.json({"message":"HELLO JSON"});
