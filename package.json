@@ -1,12 +1,13 @@
 {
-	"name": "fcc-learn-node-with-express",
-	"version": "0.1.0",
-	"dependencies": {
-		"express": "^4.14.0",
-		"body-parser": "^1.15.2",
-		"cookie-parser": "^1.4.3",
-		"fcc-express-bground": "https://github.com/freeCodeCamp/fcc-express-bground-pkg.git"
-	},
+  "name": "fcc-learn-node-with-express",
+  "version": "0.1.0",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.14.0",
+    "fcc-express-bground": "https://github.com/freeCodeCamp/fcc-express-bground-pkg.git"
+  },
   "author": "Ashutosh Matai",
   "description": "A purposeful way to learn NodeJS Backend development",
   "keywords": [
