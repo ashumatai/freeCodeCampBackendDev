@@ -2,7 +2,7 @@ var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
 
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // console.log("Hello World");
 app.get("/", function (req, res) {
@@ -35,13 +35,21 @@ app.get("/:word/echo", function (req, res) {
   return res.json({ echo: req.params.word });
 });
 
+// app.route("/name")
+//   .get(function (req, res) {
+//     return res.json({ name: req.query.first + " " + req.query.last });
+//   })
+//   .post(function (req, res) {
+//     return res.json({ name: req.query.first + " " + req.query.last });
+//   });
+
 app
   .route("/name")
   .get(function (req, res) {
-    return res.json({ name: req.query.first + " " + req.query.last });
+    return res.json({ name: req.body.first + " " + req.body.last });
   })
   .post(function (req, res) {
-    return res.json({ name: req.query.first + " " + req.query.last });
+    return res.json({ name: req.body.first + " " + req.body.last });
   });
-
+  
 module.exports = app;
