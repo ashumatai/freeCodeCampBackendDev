@@ -15,10 +15,17 @@ var app = express();
 //   }
 // });
 
-app.use(function(req, res, next) {
-  var output = req.method+" "+req.path+" - "+req.ip
-  console.log(output);
+// app.use(function(req, res, next) {
+//   var output = req.method+" "+req.path+" - "+req.ip
+//   console.log(output);
+//   next();
+// })
+
+app.get('/now', function(req, res, next) {
+  req.time = new Date().toString();
   next();
-})
+}, function(req,res) {
+  return res.json({"time": req.time})
+});
 
 module.exports = app;
