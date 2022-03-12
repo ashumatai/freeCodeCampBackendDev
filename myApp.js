@@ -80,42 +80,59 @@ const findPersonById = (personId, done) => {
 
 const findEditThenSave = (personId, done) => {
   const foodToAdd = "hamburger";
-  Person.findById(personId, (err,found)=>{
-    if(err) {
-      console.log("Err: ",err);
+  Person.findById(personId, (err, found) => {
+    if (err) {
+      console.log("Err: ", err);
       return done(err);
     }
-      console.log("Found: ",found);
+    console.log("Found: ", found);
     found.favoriteFoods.push(foodToAdd);
-    found.save((err,data)=>{
+    found.save((err, data) => {
       if (err) {
         return done(err);
       } else {
         return done(null, data);
       }
     });
-  })
+  });
 };
 
 const findAndUpdate = (personName, done) => {
   const ageToSet = 20;
-  Person.findOneAndUpdate({name: personName},{age: ageToSet},{new: true}, (error,data) => {
+  Person.findOneAndUpdate(
+    { name: personName },
+    { age: ageToSet },
+    { new: true },
+    (error, data) => {
+      if (error) {
+        console.log(error);
+        return done(error);
+      }
+      data.save((err, res) => {
+        if (err) {
+          console.log(err);
+          return done(err);
+        }
+        return done(null, res);
+      });
+    }
+  );
+};
+
+const removeById = (personId, done) => {
+  Person.findByIdAndRemove(personId, (error, data) => {
     if (error) {
       console.log(error);
       return done(error);
     }
-    data.save((err,res)=>{
+    data.save((err, res) => {
       if (err) {
         console.log(err);
         return done(err);
       }
       return done(null, res);
-    })
-  })
-};
-
-const removeById = (personId, done) => {
-  done(null /*, data*/);
+    });
+  });
 };
 
 const removeManyPeople = (done) => {
